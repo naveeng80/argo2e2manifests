@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argoe2ehelmchart
+  namespace: ingress-nginx
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: argoe2ehelmchart=ghcr.io/naveeng80/argoe2eappsourcecode
+    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/git-branch: main
+    argocd-image-updater.argoproj.io/image-tag-update-strategy: latest
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/naveeng80/argo2e2manifests.git
+    targetRevision: main
+    path: argoe2ehelmchart
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
