@@ -20,4 +20,4 @@ spec:
         ports:
         - containerPort: {{ .Values.myimage.containerandtargetPort }}
       imagePullSecrets:
-        - name: {{ .Release.Name }}-{{ .Values.myscret.myreposecretname }}
+        - name: {{ .Values.myscret.myreposecretname }}
