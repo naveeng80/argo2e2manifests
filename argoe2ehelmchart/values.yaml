@@ -19,8 +19,3 @@ myservice:
 
 myscret:
   myreposecretname: github-docker-secret
-  
-dockerConfig:
-  auths:
-    "ghcr.io": 
-       auth: "bmF2ZWVuZzgwOmdocF9SNVFBajlMSlRNdGFxaHJBWkxXWE1OaGRtTkZJNDUwdFdHM1I="
