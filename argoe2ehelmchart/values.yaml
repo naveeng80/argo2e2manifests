@@ -8,7 +8,7 @@ replicaCount: 4
 # This sets the container image more information can be found here: https://kubernetes.io/docs/concepts/containers/images/
 myimage:
   reponame: ghcr.io/naveeng80/argoe2eappsourcecode
-  repotag: 1
+  repotag: 7
   Whentopullimage: Always
   containerandtargetPort: 80
 
@@ -18,4 +18,4 @@ myservice:
   myprotocol: TCP
 
 myscret:
-  myreposecretname: github-docker-secret
+  myreposecretname: github-image-read-secret
